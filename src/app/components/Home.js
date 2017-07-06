@@ -2,7 +2,7 @@ import React from 'react';
 
 export class Home extends React.Component {
   render() {
-    let title = 'I´m a Home component';
+    let title = ':: I´m a Home component';
     let user = this.props;
     return(
       <div>
@@ -11,6 +11,8 @@ export class Home extends React.Component {
         <ul>
           {this.props.hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}
         </ul>
+        <br/>
+        {this.props.children}
       </div>
     );
   }
