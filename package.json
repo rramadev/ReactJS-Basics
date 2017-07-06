@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
-    "serve": "webpack-dev-server --content-base dist/ --inline --hot",
-    "build": "webpack -d && cp src/index.html dist/index.html && npm run serve",
-    "build:prod": "webpack -p && cp src/index.html dist/index.html"
+    "serve": "webpack-dev-server --content-base dist/",
+    "build": "webpack -d && npm run serve",
+    "build:prod": "webpack -p"
   },
   "author": "Raul Rama",
   "license": "MIT",
@@ -21,7 +21,9 @@
     "babel-preset-env": "1.6.0",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-2": "6.24.1",
+    "html-webpack-plugin": "2.29.0",
     "webpack": "3.0.0",
     "webpack-dev-server": "2.5.0"
-  }
+  },
+  "false": {}
 }
