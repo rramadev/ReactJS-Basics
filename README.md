@@ -7,6 +7,8 @@ A React.js project demo, to test and understand the fundamentals and advance con
 
 - React.js
 - JSX
+- React-dom
+- React-router
 - Webpack
 
 ## Built With

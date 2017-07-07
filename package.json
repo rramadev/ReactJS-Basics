@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
-    "serve": "webpack-dev-server --content-base dist/",
+    "serve": "webpack-dev-server --content-base dist/ --history-api-fallback",
     "build": "webpack -d && npm run serve",
     "build:prod": "webpack -p"
   },
@@ -13,7 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "react": "15.6.1",
-    "react-dom": "15.6.1"
+    "react-dom": "15.6.1",
+    "react-router": "2.6.1"
   },
   "devDependencies": {
     "babel-core": "6.25.0",
