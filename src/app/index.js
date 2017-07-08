@@ -4,6 +4,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
 import { Root } from './components/Root';
 import { User } from './components/User';
+import { UserDetail } from './components/UserDetail';
 import { Home } from './components/Home';
 
 class App extends React.Component {  
@@ -11,9 +12,10 @@ class App extends React.Component {
     return (
       <Router history={browserHistory}>
         <Route path={'/'} component={Root}>
-            <IndexRoute component={Home} />
-            <Route path={'user'} component={User} />
-            <Route path={'home'} component={Home} />
+          <IndexRoute component={Home} />
+          <Route path={'/user'} component={User} />
+          <Route path={'/user/:id'} component={UserDetail} />                      
+          <Route path={'/home'} component={Home} />
         </Route>
       </Router>
     );

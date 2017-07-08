@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { UserDetail } from './UserDetail';
+import { UserList } from './UserList';
 
 export class User extends React.Component {
   constructor(props) {
@@ -35,10 +35,10 @@ export class User extends React.Component {
     return (      
       <div className="row">
         <div className="col-xs-10 col-xs-offset-1">
-          <UserDetail name={'John'} initialAge={29} hobbies={['Chess', 'Swimming']}>
+          <UserList name={'John'} initialAge={29} hobbies={['Chess', 'Swimming']}>
             <p>- This is a paragraph passed as a children prop from the User component.</p>
-          </UserDetail>
-          <UserDetail 
+          </UserList>
+          <UserList 
             name={user.name} 
             initialAge={user.age} 
             hobbies={user.hobbies} 
