@@ -1,7 +1,9 @@
 {
-  "name": "reactjs-basics",
+  "name": "reactjs-redux-basics",
   "version": "1.0.0",
-  "description": "Basics of ReacJS",
+  "description": "Basics of ReacJS/Redux",
+  "author": "Raul Rama",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
@@ -9,8 +11,6 @@
     "build": "webpack -d && npm run serve",
     "build:prod": "webpack -p"
   },
-  "author": "Raul Rama",
-  "license": "MIT",
   "dependencies": {
     "react": "15.6.1",
     "react-dom": "15.6.1",

@@ -1,9 +1,9 @@
 
-# ReactJS Basics
+# ReactJS/Redux Basics
 
 ## Synopsis
 
-A React.js project demo, to test and understand the fundamentals and advance concepts of this javascript UI library and related technologies, including: 
+A ReactJS/Redux project demo, to test and understand the fundamentals and advance concepts of this javascript UI library and related technologies, including: 
 
 - React.js
 - JSX
