@@ -1,6 +1,6 @@
-var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/app/index.js',
@@ -20,14 +20,15 @@ module.exports = {
         }
       }
     }
+    ]
+  },
+  plugins: [  
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      files: {
+        js: ["bundle.[hash].js"]
+      }
+    }),
+    new CleanWebpackPlugin(['dist'])
   ]
-},
-plugins: [  
-  new HtmlWebpackPlugin({
-    template: './src/index.html',
-    files: {
-      js: [ "bundle.[hash].js"]
-    }
-  })
-]
 };

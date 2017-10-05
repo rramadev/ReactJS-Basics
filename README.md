@@ -5,15 +5,16 @@
 
 A ReactJS/Redux project demo, to test and understand the fundamentals and advance concepts of this javascript UI library and related technologies, including: 
 
-- React.js
+- ReactJS
+- Redux
 - JSX
 - React-dom
 - React-router
-- Webpack
 
 ## Built With
 
-- React.js
+- ReactJS
+- Redux
 - Webpack
 - Babel
 - Npm scripts
@@ -23,9 +24,8 @@ A ReactJS/Redux project demo, to test and understand the fundamentals and advanc
 command | description
 --- | ---
 `npm run start`| build
-`npm run serve`| run /dist content with webpack-dev-server and wait for changes
-`npm run build`| webpack build to /dist folder for development and run serve
-`npm run build:prod`| webpack build to /dist folder for production
+`npm run build`| webpack build for development and run webpack-dev-server and wait for changes
+`npm run build:prod`| webpack clean and build to /dist folder for production
 
 ## Installation
 
