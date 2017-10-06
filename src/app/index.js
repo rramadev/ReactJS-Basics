@@ -1,3 +1,5 @@
+import '../assets/css/sass/styles.scss';
+
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'

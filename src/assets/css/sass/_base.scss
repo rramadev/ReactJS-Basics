@@ -1,0 +1,17 @@
+/*** Base Styles ***/ 
+
+/* Html, body */
+* {
+	box-sizing: border-box;
+  &:before {
+  	box-sizing: border-box;
+  }
+  &:after {
+  	box-sizing: border-box;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
