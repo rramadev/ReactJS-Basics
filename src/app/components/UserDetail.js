@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router'
 
 export class UserDetail extends React.Component {
   onNavigateHome() {
-    browserHistory.push('/user');
+    browserHistory.push('/users');
   }
 
   render() {    

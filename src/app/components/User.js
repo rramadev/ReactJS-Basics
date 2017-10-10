@@ -1,68 +1,96 @@
 import React from 'react';
-
-import { UserList } from './UserList';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router';
+import { browserHistory } from 'react-router'
 
 export class User extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      user: { 
-        name: 'Anna',
-        age: 28,
-        hobbies: ['tennis', 'cooking']
-      },
+      age: props.initialAge,
+      name: '',
+      hobbies: [],
       homeLink: props.initialLinkName
     }  
+    // binding on constructor
+    this.onChangeHomeLink = this.onChangeHomeLink.bind(this);
   }
-  
-  onChangeHomeLink(newName) {
-    // That doesnt update the root component in real time, not a valid solution 
-    this.setState({
-      homeLink: newName
-    });
+
+  onMakeOlder() {
+    setTimeout(() => {
+      this.setState({
+        age: this.state.age + 5
+      })
+    }, 2000);       
+  }
+
+  onChangeHomeLink() {
     this.props.changeHomeLink(this.state.homeLink);
   }
 
-  onGreet() {
-    alert('The UserList component says Congrats! to the User component.');
+  onHandleChange(event) {
+    this.setState({
+      homeLink: event.target.value
+    });
   }
 
-  onSayHi() {
-    alert('The UserList component say Hi! to the User component.');
+  onNavigateHome() {
+    browserHistory.push('/home');
   }
-  
+
+  renderHobbies(hobbies) {
+    return hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)
+  }
+
   render() {
-    let defaultUser = {
-      name: 'Anna',
-      age: 28,
-      hobbies: ['tennis', 'cooking']
-    };
-
-    return (      
-      <div className="row">
-        <div className="col-xs-10 col-xs-offset-1">
-         :: {this.state.homeLink} ::
-         <hr/>
-         <UserList 
-            name={'John'} 
-            initialAge={29} 
-            hobbies={['Chess', 'Swimming']}
-            greet={this.onSayHi}
-            changeHomeLink={this.onChangeHomeLink.bind(this)} 
-            initialLinkName={this.state.homeLink}>
-            <p>- This is a paragraph passed as a children prop from the User component.</p>
-          </UserList>
-          <UserList 
-            name={defaultUser.name} 
-            initialAge={defaultUser.age} 
-            hobbies={defaultUser.hobbies} 
-            greet={this.onGreet} 
-            changeHomeLink={this.onChangeHomeLink.bind(this)} 
-            initialLinkName={this.state.homeLink}>
-            <p>- Another paragraph passed as a children prop from the Parent component.</p>
-          </UserList>
-        </div>        
-      </div>      
+    let title = ':: I´m a UserDetail component';
+    let user = this.props;
+    return(
+      <div>        
+        <p>{title}. My name is {user.name} and i´m {this.state.age} years old. Id: {user.id}</p>
+        <p>My hobbies are:</p>
+        <ul>
+          {this.renderHobbies(this.props.hobbies)}
+        </ul>
+        <hr/>
+        {this.props.children}   
+        {/* with Bind(this) */}
+        {/*<button className="btn btn-primary" onClick={this.onMakeOlder.bind(this)}>Make me older!</button> */}
+        {/* with Arrow function() */}
+        <button className="btn btn-primary" onClick={() => this.onMakeOlder()}>Make me older!</button>
+        <button className="btn btn-primary" onClick={this.props.greet}>Greet!</button>
+        <hr/>        
+        <input type="text" value={this.state.homeLink} 
+          onChange={(event) => this.onHandleChange(event)} />
+        {/* with binding on constructor */}
+        <button className="btn btn-primary" onClick={this.onChangeHomeLink}>Change Link!</button>
+        <hr/>
+        <button className="btn btn-primary" onClick={this.onNavigateHome}>Go Home</button>
+        <Link to={'/user/'+user.id} activeClassName={'active'}> >> User Details</Link>
+        <hr/>
+      </div>
     );
   }
 }
+
+// Specify the types of the props passed to the component
+// User.propTypes = {
+//   name: React.PropTypes.string,
+//   initialAge: React.PropTypes.number,
+//   hobbies: React.PropTypes.array,
+//   greet: React.PropTypes.func,
+//   changeHomeLink: React.PropTypes.func,
+//   initialLinkName: React.PropTypes.string
+// };
+
+// Updated to version 15.* using prop-types package
+User.propTypes = {
+  name: PropTypes.string,
+  initialAge: PropTypes.number,
+  hobbies: PropTypes.array,
+  greet: PropTypes.func,
+  changeHomeLink: PropTypes.func,
+  initialLinkName: PropTypes.string,
+  // Set children prop passed from parent component as required
+  children: PropTypes.element.isRequired
+};
