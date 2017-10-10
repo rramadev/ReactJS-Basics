@@ -15,3 +15,9 @@ html, body {
   height: 100%;
   margin: 0;
 }
+
+.title {
+  font-style: italic;
+  color: $bleen-color-dark;
+  // background: url(../../img/reduxlogo.png) center center no-repeat;  
+}
