@@ -10,9 +10,9 @@ export class Root extends React.Component {
     };
   }
 
-  onChangeHomeLink(newName) {
+  onChangeHomeLink(newLinkName) {
     this.setState({
-      homeLink: newName
+      homeLink: newLinkName
     })
   }
 
@@ -20,7 +20,8 @@ export class Root extends React.Component {
     const homeLinkAsExtraProp = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
         initialLinkName: this.state.homeLink,
-        changeHomeLink: this.onChangeHomeLink.bind(this)
+        // changeHomeLink: this.onChangeHomeLink.bind(this)
+        changeHomeLink: (newLinkName) => this.onChangeHomeLink(newLinkName)
       });
     });
 

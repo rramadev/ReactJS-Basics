@@ -15,13 +15,12 @@ export class UserList extends React.Component {
     }  
   }
   
-  onChangeHomeLink(newName) {
-    // That doesnt update the root component in real time, not a valid solution 
-    this.setState({
-      homeLink: newName
-    });
-    this.props.changeHomeLink(this.state.homeLink);
-  }
+  // onChangeHomeLink(newLinkName) {
+  //   this.setState({
+  //     homeLink: newLinkName
+  //   });
+  //   this.props.changeHomeLink(newLinkName);
+  // }
 
   onGreet() {
     alert('The User component says Congrats! to the User component.');
@@ -46,7 +45,7 @@ export class UserList extends React.Component {
         initialAge={29} 
         hobbies={['Chess', 'Swimming']}
         greet={this.onSayHi}
-        changeHomeLink={this.onChangeHomeLink.bind(this)} 
+        changeHomeLink={(newLinkName) => this.props.changeHomeLink(newLinkName)} 
         initialLinkName={this.state.homeLink}>
         <p>- This is a paragraph passed as a children prop from the User component.</p>
       </User>
@@ -55,8 +54,6 @@ export class UserList extends React.Component {
     return (      
       <div className="row">
         <div className="col-xs-10 col-xs-offset-1">
-         :: {this.state.homeLink} ::
-         <hr/>
           {userComp}
           <User 
             id={defaultUser.id}
@@ -64,7 +61,7 @@ export class UserList extends React.Component {
             initialAge={defaultUser.age} 
             hobbies={defaultUser.hobbies} 
             greet={this.onGreet} 
-            changeHomeLink={this.onChangeHomeLink.bind(this)} 
+            changeHomeLink={(newLinkName) => this.props.changeHomeLink(newLinkName)} 
             initialLinkName={this.state.homeLink}>
             <p>- Another paragraph passed as a children prop from the Parent component.</p>
           </User>
