@@ -38,6 +38,16 @@ export const User = (props) => {
       <ul>
         {props.user.hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}
       </ul>
+      <div className="form-group">
+        <label htmlFor="name">Name: </label>
+        <input type="text" value={props.user.name} id="name"
+        onChange={(event) => props.changeName(event.target.value)} />
+      </div>
+      <div className="form-group">
+        <label htmlFor="age">Age: </label>
+        <input type="text" value={props.user.age} id="age" 
+        onChange={(event) => props.changeAge(event.target.value)}/>
+      </div>
       <hr/>  
       {/* with Bind(this) */}
       {/*<button className="btn btn-primary" onClick={this.onMakeOlder.bind(this)}>Make me older!</button> */}

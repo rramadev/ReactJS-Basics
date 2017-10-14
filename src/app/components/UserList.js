@@ -11,7 +11,9 @@ export const UserList = (props) => {
         <User 
           user={props.user} 
           link={props.link} 
-          changeHomeLink={(name) => props.setLink(name)} />            
+          changeHomeLink={(link) => props.setLink(link)}
+          changeName={(name) => props.setName(name)}
+          changeAge={(age) => props.setAge(age)} />            
       </div>        
     </div>      
   );
