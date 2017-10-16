@@ -4,9 +4,10 @@ import { Provider } from 'react-redux';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
 import { App } from './components/App';
-import  UserList  from './containers/users';
 import { UserDetail } from './components/UserDetail';
 import { Home } from './components/Home';
+import  UserList  from './containers/users';
+
 
 import store from './store';
 

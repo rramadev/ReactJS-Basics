@@ -48,6 +48,7 @@ export const User = (props) => {
         <input type="text" value={props.user.age} id="age" 
         onChange={(event) => props.changeAge(event.target.value)}/>
       </div>
+      <Link to={'/user/'+props.user.id} activeClassName={'active'}> >> User Details</Link>
       <hr/>  
       {/* with Bind(this) */}
       {/*<button className="btn btn-primary" onClick={this.onMakeOlder.bind(this)}>Make me older!</button> */}
@@ -61,9 +62,9 @@ export const User = (props) => {
       {/* with binding on constructor */}
       {/* <button className="btn btn-primary" onClick={this.onChangeHomeLink}>Change Link!</button>
       <hr/>
-      <button className="btn btn-primary" onClick={this.onNavigateHome}>Go Home</button>
-      <Link to={'/user/'+user.id} activeClassName={'active'}> >> User Details</Link>
-      <hr/> */}
+      <button className="btn btn-primary" onClick={this.onNavigateHome}>Go Home</button>*/ }
+      
+      <hr/>
     </div>
   ); 
 };

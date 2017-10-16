@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { UserList } from '../components/UserList';
-import { setName, setAge } from '../actions/userActions';
+import { setName, setAge, fetchUser } from '../actions/userActions';
 import { setLink } from '../actions/linkActions';
 
 const mapStateToProps = (state) => {
@@ -22,8 +22,11 @@ const mapDispatchToProps = (dispatch) => {
     },
     setLink: (link) => {
       dispatch(setLink(link));
+    },
+    fetchUser: () => {
+      dispatch(fetchUser());
     }
-  }
+  };
 };
 
 const UsersContainer = connect(

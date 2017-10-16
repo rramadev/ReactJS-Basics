@@ -13,7 +13,9 @@ export const UserList = (props) => {
           link={props.link} 
           changeHomeLink={(link) => props.setLink(link)}
           changeName={(name) => props.setName(name)}
-          changeAge={(age) => props.setAge(age)} />            
+          changeAge={(age) => props.setAge(age)} /> 
+        <hr/>
+        <button>Fetch User</button>           
       </div>        
     </div>      
   );
