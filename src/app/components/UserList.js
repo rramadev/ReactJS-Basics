@@ -15,7 +15,7 @@ export const UserList = (props) => {
           changeName={(name) => props.setName(name)}
           changeAge={(age) => props.setAge(age)} /> 
         <hr/>
-        <button>Fetch User</button>           
+        <button onClick={() => props.fetchUser()}>Fetch new User</button>          
       </div>        
     </div>      
   );

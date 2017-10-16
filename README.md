@@ -10,6 +10,9 @@ A ReactJS/Redux project demo, to test and understand the fundamentals and advanc
 - JSX
 - React-dom
 - React-router
+- React-redux
+- React-thunk
+- Axios
 
 ## Built With
 
@@ -23,7 +26,7 @@ A ReactJS/Redux project demo, to test and understand the fundamentals and advanc
 
 command | description
 --- | ---
-`npm run start`| build
+`npm start`| build
 `npm run build`| webpack build for development and run webpack-dev-server and wait for changes
 `npm run build:prod`| webpack clean and build to /dist folder for production
 

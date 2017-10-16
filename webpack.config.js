@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-let isProd = process.env.NODE_ENV === 'prod';
+let isProd = process.env.NODE_ENV === 'production';
 let cssDev = ['style-loader', 'css-loader', 'sass-loader']; 
 let cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader',

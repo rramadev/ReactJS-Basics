@@ -14,9 +14,10 @@ export function setAge(age) {
   };
 }
 
-export function fetchUser() {
+export function fetchUser(id) {
+  let userId = id || '59e14cfed9575f0100473c6c';
   return function(dispatch) {
-    axios.get('http://rest.learncode.academy/api/johnbob/friends/59e14cfed9575f0100473c6c')
+    axios.get('http://rest.learncode.academy/api/johnbob/friends/'+userId)
       .then((response) => {
         dispatch({
           type: 'FETCH_USER_FULFILLED', 

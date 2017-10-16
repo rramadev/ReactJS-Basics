@@ -7,8 +7,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
-    "build": "set NODE_ENV=dev&& webpack-dev-server --history-api-fallback",
-    "build:prod": "set NODE_ENV=prod&& webpack -p"
+    "build": "set NODE_ENV=development&& webpack-dev-server --history-api-fallback",
+    "build:prod": "set NODE_ENV=production&& webpack -p"
   },
   "dependencies": {
     "axios": "0.16.2",

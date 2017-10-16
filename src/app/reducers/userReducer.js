@@ -23,6 +23,7 @@ const userReducer = (state = initalState, action) => {
     case 'FETCH_USER_FULFILLED':
       state = {
         ...state,
+        id: action.payload.id,
         name: action.payload.name,
         age: action.payload.age
       }

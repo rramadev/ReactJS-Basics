@@ -23,8 +23,8 @@ const mapDispatchToProps = (dispatch) => {
     setLink: (link) => {
       dispatch(setLink(link));
     },
-    fetchUser: () => {
-      dispatch(fetchUser());
+    fetchUser: (id) => {
+      dispatch(fetchUser(id));
     }
   };
 };
