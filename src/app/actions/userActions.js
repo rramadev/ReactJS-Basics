@@ -15,7 +15,7 @@ export function setAge(age) {
 }
 
 export function fetchUser(id) {
-  let userId = id || '59e14cfed9575f0100473c6c';
+  let userId = id || '5a02b53f3744ae0100f8184e';
   return function(dispatch) {
     axios.get('http://rest.learncode.academy/api/johnbob/friends/'+userId)
       .then((response) => {

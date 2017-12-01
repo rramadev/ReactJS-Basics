@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 // Stateless component
 export const Header = (props) => {
-  return(
+  return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">      
       ReactJS/Redux  
       <div className="collapse navbar-collapse" id="navbarSupportedContent">

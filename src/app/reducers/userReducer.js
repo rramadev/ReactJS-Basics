@@ -35,6 +35,7 @@ const userReducer = (state = initalState, action) => {
       }
       break;    
   }
+  
   return state;
 };
 

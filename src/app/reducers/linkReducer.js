@@ -1,6 +1,8 @@
-const linkReducer = (state = {
+const initalState = {
   homeLink: 'Home'
-}, action) => {
+};
+
+const linkReducer = (state = initalState, action) => {
   switch (action.type) {
     case 'SET_LINK':
       state = {
@@ -8,6 +10,7 @@ const linkReducer = (state = {
       };
       break;
   };
+
   return state;
 }
 
