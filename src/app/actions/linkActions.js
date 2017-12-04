@@ -1,6 +1,4 @@
-export function setLink(link) {
-  return {
-    type: 'SET_LINK',
-    payload: link
-  };
-}
+export const setLink = (link) => ({
+  type: 'SET_LINK',
+  payload: link
+});

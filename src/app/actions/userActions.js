@@ -1,20 +1,16 @@
 import axios from 'axios';
 
-export function setName(name) {
-  return {
-    type: 'SET_NAME',
-    payload: name
-  };
-}
+export const setName = (name) => ({
+  type: 'SET_NAME',
+  payload: name
+});
 
-export function setAge(age) {
-  return {
-    type: 'SET_AGE',
-    payload: age
-  };
-}
+export const setAge = (age) => ({
+  type: 'SET_AGE',
+  payload: age
+});
 
-export function fetchUser(id) {
+export const fetchUser = (id) => {
   let userId = id || '5a02b53f3744ae0100f8184e';
   return function(dispatch) {
     axios.get('http://rest.learncode.academy/api/johnbob/friends/'+userId)
@@ -31,4 +27,4 @@ export function fetchUser(id) {
         })
       });
     };
-}
+};

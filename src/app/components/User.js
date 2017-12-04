@@ -64,7 +64,7 @@ export const User = (props) => {
       <hr/>
       <button className="btn btn-primary" onClick={this.onNavigateHome}>Go Home</button>*/ }
       
-      <hr/>
+      <hr/>      
     </div>
   ); 
 };

@@ -6,8 +6,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import { App } from './components/App';
 import { Home } from './components/Home';
-import  UserList  from './containers/users';
-import  UserDetail  from './containers/userDetail';
+import UserList from './containers/users';
+import UserDetail from './containers/userDetail';
 
 import store from './store';
 

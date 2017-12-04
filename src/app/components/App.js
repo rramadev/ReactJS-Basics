@@ -16,7 +16,7 @@ export const App = (props) => {
         <div className="col-xs-10 col-xs-offset-1">          
           {props.children}
         </div>        
-      </div>
+      </div>    
     </div>
   );
 };
