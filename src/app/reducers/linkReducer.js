@@ -5,13 +5,13 @@ const initalState = {
 const linkReducer = (state = initalState, action) => {
   switch (action.type) {
     case 'SET_LINK':
-      state = {
-        homeLink: action.payload
+      return  {
+        ...state,
+        homeLink: action.payload || 'Home'
       };
-      break;
-  };
-
-  return state;
+    default: 
+      return state;
+  };  
 }
 
 export default linkReducer;

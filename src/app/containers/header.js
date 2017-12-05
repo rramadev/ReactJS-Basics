@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 
 import { Header } from '../components/Header';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, { newP }) => {
   return {
-    link: state.link
+    link: state.link,
+    newP
   };
 };
 

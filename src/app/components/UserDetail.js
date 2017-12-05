@@ -20,7 +20,7 @@ export class UserDetail extends React.Component {
         <h3>User Age: {this.props.user.age} </h3>    
         <hr/>
         {/* Material-UI Button */}
-        <Button onClick={(id) => this.props.fetchUser('5a031e6a3744ae0100f81882')} 
+        <Button onClick={() => this.props.onFetchUser('5a031e6a3744ae0100f81882')} 
           label="Fetch new User" />
         {/* Bootstrap Button */}
         {/* <button className="btn btn-primary" onClick={(id) => this.props.fetchUser('5a031e6a3744ae0100f81882')}>Fetch new User</button> */}

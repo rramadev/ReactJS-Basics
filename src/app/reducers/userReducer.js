@@ -9,34 +9,30 @@ const initalState = {
 const userReducer = (state = initalState, action) => {
   switch (action.type) {
     case 'SET_NAME':
-      state = {
+      return {
         ...state,
         name: action.payload
-      };
-      break;
+      };    
     case 'SET_AGE':
-      state = {
+      return {
         ...state,
         age: action.payload
-      };
-      break;
+      };      
     case 'FETCH_USER_FULFILLED':
-      state = {
+      return {
         ...state,
         id: action.payload.id,
         name: action.payload.name,
         age: action.payload.age
-      }
-      break;
+      };
     case 'FETCH_USER_ERROR':
-      state = {
+      return {
         ...state,
         error: action.payload
       }
-      break;    
+    default:
+      return state;    
   }
-  
-  return state;
 };
 
 export default userReducer;

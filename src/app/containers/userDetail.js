@@ -10,12 +10,17 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchUser: (id) => {
-      dispatch(fetchUser(id));
-    }
-  };
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     onFetchUser(id) {
+//       dispatch(fetchUser(id));
+//     }
+//   };
+// };
+
+// Shorthand notation, when the arguments of props and action to dispatch match
+const mapDispatchToProps = {
+  onFetchUser: fetchUser  
 };
 
 const UserDetailContainer = connect(

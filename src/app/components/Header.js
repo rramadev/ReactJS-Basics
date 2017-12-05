@@ -10,12 +10,23 @@ export const Header = (props) => {
         <ul className="navbar-nav mr-auto">          
           <li className="nav-item">
             <a className="nav-link" href="#">
-              <Link to={'/home'} activeStyle={{color: 'blue'}}>{props.link.homeLink}</Link>
+              <Link to={'/home'} activeStyle={{color: 'black', textDecoration: 'none'}}>
+                {props.link.homeLink}
+              </Link>
             </a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">
-              <Link to={'/users'} activeClassName={'myActiveClass'}>Users</Link>
+              <Link to={'/users'} activeStyle={{color: 'black', textDecoration: 'none'}}>
+                Users
+              </Link>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              <Link to={'/newP'} activeStyle={{color: 'black', textDecoration: 'none'}}>
+                {props.newP}
+              </Link>
             </a>
           </li>
         </ul>        

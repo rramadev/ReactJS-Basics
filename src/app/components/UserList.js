@@ -4,7 +4,7 @@ import { User } from './User';
 
 export const UserList = (props) => {
   return (      
-    <div className="row">
+    <div className="row" style={{marginTop: '2em'}}>
       <div className="col-xs-10 col-xs-offset-1">  
         <p>User list:</p>
         <hr/>
