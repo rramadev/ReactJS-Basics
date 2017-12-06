@@ -6,6 +6,14 @@ import { loadState, saveState } from './localStorage';
 import userReducer from './reducers/userReducer';
 import linkReducer from './reducers/linkReducer';
 
+// Custom implementation of redux-promise
+const addPromiseSupportToDispatch = (store) => (nextDispatch) => (action) => {
+  if (typeof action.then === 'function') {
+    return action.then(nextDispatch);
+  }
+  return nextDispatch(action);
+};
+
 const configureStore = () => {
 
   // Load local state from start
@@ -23,7 +31,10 @@ const configureStore = () => {
 
   store.subscribe(() => {
     saveState(store.getState());  
-  });
+  });  
+  
+  // Add custom 'Promises as actions' support
+  store.dispatch = addPromiseSupportToDispatch(store)(store.dispatch);
 
   return store;
 };
