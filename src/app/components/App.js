@@ -2,7 +2,7 @@ import '../../assets/css/sass/styles.scss';
 
 import React from 'react';
 
-import Header from '../containers/header';
+import Header from '../containers/HeaderContainer';
 import { Footer } from './Footer';
 
 export const App = (props) => {

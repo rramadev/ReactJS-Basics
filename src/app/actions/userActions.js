@@ -20,6 +20,14 @@ const fetchUserError = (error) => ({
   payload: error
 });
 
+
+// Added Promises support to store.dispatch
+// export const fetchUser = (id = '5a02b53f3744ae0100f8184e') => 
+// axios.get('http://rest.learncode.academy/api/johnbob/friends/'+id)
+//   .then(fetchUserFulfilled)
+//   .catch(fetchUserError);
+
+// Using thunk to dispatch multiples actions
 // export const fetchUser = (id) => {
 //   let userId = id || '5a02b53f3744ae0100f8184e';
 //   return function(dispatch) {
@@ -33,14 +41,9 @@ const fetchUserError = (error) => ({
 //     };
 // };
 
-// export const fetchUser = (id = '5a02b53f3744ae0100f8184e') => 
-//   (dispatch) =>
-//     axios.get('http://rest.learncode.academy/api/johnbob/friends/'+id)
-//       .then(response => dispatch(fetchUserFulfilled(response)))
-//       .catch(error => dispatch(fetchUserError(error)));
-
-// Added Promises support to store.dispatch
+// Refactored version
 export const fetchUser = (id = '5a02b53f3744ae0100f8184e') => 
-  axios.get('http://rest.learncode.academy/api/johnbob/friends/'+id)
-    .then(fetchUserFulfilled)
-    .catch(fetchUserError);
+  (dispatch) =>
+    axios.get('http://rest.learncode.academy/api/johnbob/friends/'+id)
+      .then(response => dispatch(fetchUserFulfilled(response)))
+      .catch(error => dispatch(fetchUserError(error)));
