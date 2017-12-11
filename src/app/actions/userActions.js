@@ -17,7 +17,7 @@ const fetchUserFulfilled = (response) => ({
 
 const fetchUserError = (error) => ({
   type: 'FETCH_USER_ERROR', 
-  payload: error
+  payload: error.message || 'Error.'
 });
 
 
@@ -45,5 +45,7 @@ const fetchUserError = (error) => ({
 export const fetchUser = (id = '5a02b53f3744ae0100f8184e') => 
   (dispatch) =>
     axios.get('http://rest.learncode.academy/api/johnbob/friends/'+id)
-      .then(response => dispatch(fetchUserFulfilled(response)))
-      .catch(error => dispatch(fetchUserError(error)));
+    .then(
+      response => dispatch(fetchUserFulfilled(response)),
+      error => dispatch(fetchUserError(error))
+    ); 
