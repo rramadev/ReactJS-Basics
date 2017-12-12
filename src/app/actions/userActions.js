@@ -42,10 +42,9 @@ const fetchUserError = (error) => ({
 // };
 
 // Refactored version
-export const fetchUser = (id = '5a02b53f3744ae0100f8184e') => 
-  (dispatch) =>
-    axios.get('http://rest.learncode.academy/api/johnbob/friends/'+id)
-    .then(
-      response => dispatch(fetchUserFulfilled(response)),
-      error => dispatch(fetchUserError(error))
-    ); 
+export const fetchUser = (id = '5a02b53f3744ae0100f8184e') => (dispatch) =>
+  axios.get('http://rest.learncode.academy/api/johnbob/friends/'+id)
+  .then(
+    response => dispatch(fetchUserFulfilled(response)),
+    error => dispatch(fetchUserError(error))
+  ); 
